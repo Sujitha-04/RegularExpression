@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="iso-8859-9"/>
+        <meta name='viewport' content='width=device-width, initial-scale=1'/>
+        <title>GridSystem in BootStrap</title>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        
+    </head>
+    <body class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <span id="message"></span>
+                <div class="card-mt-3">
+                    <div class="card-header bg-danger text-white">Sample Form</div>
+                    <div class="card-body">
+                        
+                        <form>
+                            <input type="text" class="form-control" onkeyup="validateEmail()" id="mobile" placeholder="mobile"/>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    <script>
+        function validateEmail(){
+            var msg1=document.querySelector("#mobile").value;
+            var msg=document.querySelector("#message");
+            
+            if(msg1.match("^[6-9]{1}[0-9]{9}$")!=null){
+                msg.classList.remove("alert-warning");
+                msg.classList.add("alert","alert-info", "mb-3");
+                msg.textContent="Valid mobile numebr";
+            }
+            else{
+                msg.classList.add("alert","alert-info" ,"mb-3");
+                msg.classList.add("alert","alert-info");
+                msg.textContent="Invalid mobile numebr";
+                
+            }
+        }
+    </script>
+</html>
